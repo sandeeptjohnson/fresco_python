@@ -1,0 +1,58 @@
+import numpy as np
+import pandas as pd
+
+data = np.array([176.2, 158.4, 167.6, 156.2,161.4])
+heights_A = pd.Series(data,index = ["s1", "s2", "s3", "s4","s5"])
+
+data = np.array([85.1, 90.2, 76.8, 80.4, 78.9])
+weights_A = pd.Series(data,index = ["s1", "s2", "s3", "s4","s5"])
+
+d = {"Student_height" : heights_A ,"Student_weight" : weights_A}
+df_A = pd.DataFrame(d) 
+
+df_A.to_csv('classA.csv')
+
+######################
+
+import numpy as np
+import pandas as pd
+
+df_A2 = pd.read_csv('classA.csv')
+print(df_A2)
+
+######################
+
+import numpy as np
+import pandas as pd
+
+df_A3 = pd.read_csv('classA.csv',index_col=0)
+print(df_A3)
+
+######################
+
+import numpy as np
+import pandas as pd
+
+np.random.seed(100)
+data=np.random.normal(170, 25, 5)
+heights_B =  pd.Series(data,index = ["s1", "s2", "s3", "s4","s5"])
+
+np.random.seed(100)
+data=np.random.normal(75, 12, 5)
+weights_B =  pd.Series(data,index = ["s1", "s2", "s3", "s4","s5"])
+
+d = {"Student_height" : heights_B ,"Student_weight" : weights_B}
+df_B = pd.DataFrame(d) 
+
+df_B.to_csv('classB.csv',index=False)
+
+###################
+
+import numpy as np
+import pandas as pd
+
+df_B2 = pd.read_csv('classB.csv')
+print(df_B2)
+
+###################
+
