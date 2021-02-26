@@ -1,2 +1,2 @@
-# fresco_python
-Fresco Python
+# python learning
+Learning Python
